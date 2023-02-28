@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- bootstrap主样式文件 -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<!-- bootstrap 表格组件的样式文件 -->
+		<link rel="stylesheet" href="css/bootstrap-table.css" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+		<!-- 在很多的前端ui框架中都可以使用jquery -->
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<!-- bootstrap框架的主js文件 -->
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<!-- bootstrap框架中的table组件的js文件 -->
+		<script type="text/javascript" src="js/bootstrap-table.js" ></script>
+		<!-- bootstrap框架中table组件的汉化包 -->
+		<script type="text/javascript" src="js/bootstrap-table-zh-CN.js" ></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.22.0/moment-with-locales.js"></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="js/my.js" ></script>
+	</head>
+	<body>
+		<div class="panel-body" style="padding-bottom: 0;">
+			<!-- 新增修改删除工具栏 -->
+			<div id="toolbar" class="btn-group">
+				<button id="toAdd" class="btn btn-default" data-toggle="modal">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+				</button>
+				<button id="toUpate" class="btn btn-default" data-toggle="modal">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+			    </button>
+				<button id="delBtn" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                </button>
+			</div>
+			<!-- 数据展示区 -->
+			<table id="tb"></table>
+		</div>
+		<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title">学生信息</h4>
+		            </div>
+		            <div class="modal-body">
+		            	<form class="form-horizontal" role="form">
+		            		<input type="hidden" name="id" /> 
+		            		<div class="form-group">
+		            			<label class="col-sm-2 control-label">姓名</label>
+		            			<div class="col-sm-10">
+		            				<input name="sname" type="text" class="form-control" 
+		            					placeholder="请输入姓名">
+		            			</div>
+		            		</div>
+		            		<div class="form-group">
+		            			<label class="col-sm-2 control-label">性别</label>
+		            			<label class="col-sm-3 control-label">
+		            				<div class="radio">
+		            					<span>
+		            						<input type="radio" value="男" 
+		            							name="sex" data-title="男" checked />男
+		            					</span>
+		            				</div>
+		            			</label>
+		            			<label class="col-sm-3 control-label">
+		            				<div class="radio">
+		            					<span>
+		            						<input type="radio" value="女" 
+		            							name="sex" data-title="女" />女
+		            					</span>
+		            				</div>
+		            			</label>
+		            		</div>
+		            		<div class="form-group">
+		            			<label class="col-sm-2 control-label">生日</label>
+		            			<div class="col-sm-10 input-group date" id="birth">
+		            				<input name="birth" type="text" class="form-control" />
+		            				<span class="input-group-addon">
+		            					<span class="glyphicon glyphicon-calendar"></span>
+		            				</span>
+		            			</div>
+		            		</div>
+		            		<div class="form-group">
+		            			<label class="col-sm-2 control-label">手机</label>
+		            			<div class="col-sm-10">
+		            				<input name="mobile" type="text" class="form-control" 
+		            					placeholder="请输入手机号码">
+		            			</div>
+		            		</div>
+		            	</form>
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		                <button id="addBtn" type="button" class="btn btn-primary">提交</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</body>
+</html>
